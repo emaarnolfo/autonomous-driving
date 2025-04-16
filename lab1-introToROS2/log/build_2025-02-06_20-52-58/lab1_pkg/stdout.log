@@ -1,0 +1,26 @@
+[35m[1mConsolidate compiler generated dependencies of target talker[0m
+[35m[1mConsolidate compiler generated dependencies of target relay[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/relay.dir/src/relay.cpp.o[0m
+[ 75%] Built target talker
+[100%] [32m[1mLinking CXX executable relay[0m
+[100%] Built target relay
+-- Install configuration: ""
+-- Installing: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/lib/lab1_pkg/talker
+-- Set runtime path of "/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/lib/lab1_pkg/talker" to ""
+-- Installing: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/lib/lab1_pkg/relay
+-- Set runtime path of "/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/lib/lab1_pkg/relay" to ""
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/ament_index/resource_index/package_run_dependencies/lab1_pkg
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/ament_index/resource_index/parent_prefix_path/lab1_pkg
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/environment/ament_prefix_path.sh
+-- Installing: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/environment/path.sh
+-- Installing: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/environment/path.dsv
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/local_setup.bash
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/local_setup.sh
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/local_setup.zsh
+-- Installing: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/local_setup.dsv
+-- Installing: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/package.dsv
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/ament_index/resource_index/packages/lab1_pkg
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/cmake/lab1_pkgConfig.cmake
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/cmake/lab1_pkgConfig-version.cmake
+-- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/package.xml

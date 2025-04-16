@@ -1,0 +1,6 @@
+Invoking command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg -DCMAKE_INSTALL_PREFIX=/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg
+Invoked command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg -DCMAKE_INSTALL_PREFIX=/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg
+Invoking command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg -- -j12 -l12
+Invoked command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg -- -j12 -l12
+Invoking command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg
+Invoked command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg

@@ -1,0 +1,52 @@
+[0.007s] Invoking command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg -- -j12 -l12
+[0.053s] [35m[1mConsolidate compiler generated dependencies of target relay[0m
+[0.054s] [35m[1mConsolidate compiler generated dependencies of target talker[0m
+[0.074s] [ 25%] [32mBuilding CXX object CMakeFiles/relay.dir/src/relay.cpp.o[0m
+[0.074s] [ 50%] [32mBuilding CXX object CMakeFiles/talker.dir/src/talker.cpp.o[0m
+[1.562s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/relay.cpp:[m[K In constructor ‘[01m[KRelay::Relay()[m[K’:
+[1.562s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/relay.cpp:8:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+[1.562s]     8 |             [01;31m[Ksubscription_[m[K = this->create_subscription<ackermann_msgs::msg::AckermannDriveStamped>(
+[1.562s]       |             [01;31m[K^~~~~~~~~~~~~[m[K
+[1.563s]       |             [32m[Krmw_subscription_t[m[K
+[1.594s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/talker.cpp:[m[K In constructor ‘[01m[KTalker::Talker()[m[K’:
+[1.594s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/talker.cpp:12:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kspeed_[m[K’ was not declared in this scope
+[1.594s]    12 |             [01;31m[Kspeed_[m[K = this->get_parameter("v").as_double();
+[1.594s]       |             [01;31m[K^~~~~~[m[K
+[1.597s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/relay.cpp:12:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+[1.597s]    12 |             [01;31m[Kpublisher_[m[K = this->create_publisher<ackermann_msgs::msg::AckermannDriveStamped>("drive_relay", 10);
+[1.597s]       |             [01;31m[K^~~~~~~~~~[m[K
+[1.597s]       |             [32m[Krmw_publisher_t[m[K
+[1.598s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/talker.cpp:13:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kangle_[m[K’ was not declared in this scope
+[1.598s]    13 |             [01;31m[Kangle_[m[K = this->get_parameter("d").as_double();
+[1.598s]       |             [01;31m[K^~~~~~[m[K
+[1.601s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/talker.cpp:16:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+[1.601s]    16 |             [01;31m[Kpublisher_[m[K = this->create_publisher<ackermann_msgs::msg::AckermannDriveStamped>("drive", 10);
+[1.602s]       |             [01;31m[K^~~~~~~~~~[m[K
+[1.602s]       |             [32m[Krmw_publisher_t[m[K
+[1.605s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/relay.cpp:[m[K In member function ‘[01m[Kvoid Relay::listener_callback(ackermann_msgs::msg::AckermannDriveStamped_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.605s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/relay.cpp:22:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+[1.605s]    22 |             [01;31m[Kpublisher_[m[K->publish(*msg);
+[1.605s]       |             [01;31m[K^~~~~~~~~~[m[K
+[1.605s]       |             [32m[Krmw_publisher_t[m[K
+[1.608s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/talker.cpp:19:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktimer_t[m[K’?
+[1.608s]    19 |             [01;31m[Ktimer_[m[K = this->create_wall_timer(std::chrono::seconds(1000), std::bind(&Talker::publish_message, this));
+[1.608s]       |             [01;31m[K^~~~~~[m[K
+[1.608s]       |             [32m[Ktimer_t[m[K
+[1.617s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/talker.cpp:[m[K In member function ‘[01m[Kvoid Talker::publish_message()[m[K’:
+[1.617s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/talker.cpp:26:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kspeed_[m[K’ was not declared in this scope
+[1.617s]    26 |             msg.drive.speed = [01;31m[Kspeed_[m[K;
+[1.617s]       |                               [01;31m[K^~~~~~[m[K
+[1.621s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/talker.cpp:27:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kangle_[m[K’ was not declared in this scope
+[1.621s]    27 |             msg.drive.steering_angle = [01;31m[Kangle_[m[K;
+[1.621s]       |                                        [01;31m[K^~~~~~[m[K
+[1.625s] [01m[K/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/src/lab1_pkg/src/talker.cpp:29:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+[1.625s]    29 |             [01;31m[Kpublisher_[m[K->publish(msg);
+[1.625s]       |             [01;31m[K^~~~~~~~~~[m[K
+[1.625s]       |             [32m[Krmw_publisher_t[m[K
+[2.083s] gmake[2]: *** [CMakeFiles/talker.dir/build.make:76: CMakeFiles/talker.dir/src/talker.cpp.o] Error 1
+[2.084s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/talker.dir/all] Error 2
+[2.084s] gmake[1]: *** Waiting for unfinished jobs....
+[3.138s] gmake[2]: *** [CMakeFiles/relay.dir/build.make:76: CMakeFiles/relay.dir/src/relay.cpp.o] Error 1
+[3.138s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/relay.dir/all] Error 2
+[3.139s] gmake: *** [Makefile:146: all] Error 2
+[3.141s] Invoked command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg -- -j12 -l12

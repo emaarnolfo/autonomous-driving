@@ -1,0 +1,2 @@
+Invoking command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg -- -j12 -l12
+Invoked command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg -- -j12 -l12

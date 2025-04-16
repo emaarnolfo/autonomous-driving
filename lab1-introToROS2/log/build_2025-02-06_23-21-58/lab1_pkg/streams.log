@@ -1,0 +1,28 @@
+[0.008s] Invoking command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg -- -j12 -l12
+[0.047s] [35m[1mConsolidate compiler generated dependencies of target talker[0m
+[0.066s] [ 75%] [32mBuilding CXX object CMakeFiles/talker.dir/src/talker.cpp.o[0m
+[0.066s] [ 75%] Built target relay
+[2.774s] [100%] [32m[1mLinking CXX executable talker[0m
+[2.913s] [100%] Built target talker
+[2.927s] Invoked command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg -- -j12 -l12
+[2.936s] Invoking command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg
+[2.943s] -- Install configuration: ""
+[2.943s] -- Installing: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/lib/lab1_pkg/talker
+[2.945s] -- Set runtime path of "/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/lib/lab1_pkg/talker" to ""
+[2.945s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/lib/lab1_pkg/relay
+[2.945s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/ament_index/resource_index/package_run_dependencies/lab1_pkg
+[2.945s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/ament_index/resource_index/parent_prefix_path/lab1_pkg
+[2.945s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/environment/ament_prefix_path.sh
+[2.945s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/environment/ament_prefix_path.dsv
+[2.946s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/environment/path.sh
+[2.946s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/environment/path.dsv
+[2.946s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/local_setup.bash
+[2.946s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/local_setup.sh
+[2.946s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/local_setup.zsh
+[2.946s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/local_setup.dsv
+[2.946s] -- Installing: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/package.dsv
+[2.946s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/ament_index/resource_index/packages/lab1_pkg
+[2.947s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/cmake/lab1_pkgConfig.cmake
+[2.947s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/cmake/lab1_pkgConfig-version.cmake
+[2.947s] -- Up-to-date: /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/install/lab1_pkg/share/lab1_pkg/package.xml
+[2.948s] Invoked command in '/home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/emanuel/UAH/TFG/ROS2-tutorial/lab_1/build/lab1_pkg
