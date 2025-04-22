@@ -25,10 +25,11 @@ public:
 private:
     std::string lidarscan_topic = "/scan";
     std::string drive_topic = "/drive";
-    const int max_gap = 8; // max gap value
+    const int max_gap = 10; // max gap value
     const float bubble_radius = 0.5; // bubble radius in meters
     const float max_steering_angle = M_PI / 4; // max steering angle in radians 
     const float SMOOTHINH_FACTOR = 0.8; // smoothing factor for the bubble
+    const int max_jump = 10;
 
    double get_range(const sensor_msgs::msg::LaserScan::ConstSharedPtr scan_msg, double angle)
    {
@@ -178,7 +179,6 @@ private:
             if (ranges[i] > max_range)
             {
                 max_range = ranges[i];
-                best_index = i;  // Reutiliza start_i como índice del mejor punto
                 best_indices.clear();
                 best_indices.push_back(i);
             }
@@ -188,11 +188,36 @@ private:
             }
         }
 
+        // Si no se encontró ningún índice válido, usar el índice medio
+        static int previous_best_index = -1;
+
         if (!best_indices.empty())
-        {   // Se elige el índice del medio de los que tienen el máximo valor
-            int middle_index = best_indices[best_indices.size() / 2];
-            best_index = middle_index;  // Reutiliza start_i como índice del mejor punto
-        }
+        {
+            int raw_index = best_indices[best_indices.size() / 2];
+
+            // Filtro de suavizado
+            if (previous_best_index == -1)
+                previous_best_index = raw_index;
+    
+            // Aplica el filtro suave
+            float alpha = 0.1;
+            int smoothed_index = static_cast<int>(alpha * raw_index + (1.0 - alpha) * previous_best_index);
+    
+            // Aplica el límite de salto
+            int delta = smoothed_index - previous_best_index;
+            if (std::abs(delta) > max_jump)
+            {
+                if (delta > 0)
+                    smoothed_index = previous_best_index + max_jump;
+                else
+                    smoothed_index = previous_best_index - max_jump;
+            }
+
+            best_index = smoothed_index;
+            previous_best_index = smoothed_index;
+            }
+
+        previous_best_index = best_index;
     }
 
     void lidar_callback(const sensor_msgs::msg::LaserScan::ConstSharedPtr scan_msg) 
