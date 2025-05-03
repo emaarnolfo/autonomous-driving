@@ -50,9 +50,9 @@ public:
         : Node("reactive_node"),
           truncated(false),
           error_based_velocities_({
-              {"low", 3.0},
-              {"medium", 1.5},
-              {"high", 0.5}
+              {"low", 5.0},
+              {"medium", 2.5},
+              {"high", 1.5}
           })
     {
         lidar_subscriber_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
@@ -71,7 +71,8 @@ private:
     
     const int smoothing_filter_size = 5; // number of points to consider for smoothing
     const float max_gap = 10.0; // maximum gap size in meters
-    const float bubble_radius = 0.5; // bubble radius in meters
+    const float bubble_radius = 0.6; // bubble radius in meters
+    const int bubble_indices = 400;
     const float truncation_angle_coverage = M_PI; // max steering angle in radians 
     std::map<std::string, double> error_based_velocities_;
     
@@ -162,6 +163,7 @@ private:
         {
             ranges[i] = 0.0f;
         }
+        RCLCPP_INFO(this->get_logger(), "Burbuja aplicada a %d indices", end - start);
         return;
     }
 
@@ -366,7 +368,7 @@ private:
         find_best_point(filtered_ranges, gap_start, gap_end, best_index);
 
         // Obtiene el punto medio del gap
-        //int best_index = get_best_point(filtered_ranges, gap_start, gap_end);
+        // int best_index = get_best_point(filtered_ranges, gap_start, gap_end);
 
         // 7. Calcular el ángulo global del mejor punto
         //float steering_angle = scan_msg->angle_min + (best_index + truncated_start_index) * scan_msg->angle_increment;
