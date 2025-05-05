@@ -11,7 +11,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # Find dependencies
-foreach(PACKAGE 
+foreach(PACKAGE
   ament_cmake 
   ament_cmake_python
   rclcpp
@@ -30,9 +30,22 @@ endforeach()
 include_directories(include)
 
 # Create Cpp executable
-add_executable(reactive_node src/reactive_node.cpp)
+add_executable(reactive_node 
+  src/main.cpp
+  src/reactive_follow_gap_node.cpp
+  src/utility.cpp
+  src/lidar_processing.cpp
+  src/gap_finding.cpp
+)
+
+
 ament_target_dependencies(reactive_node 
-  rclcpp geometry_msgs ackermann_msgs nav_msgs sensor_msgs std_msgs
+  rclcpp
+  geometry_msgs
+  ackermann_msgs
+  nav_msgs
+  sensor_msgs
+  std_msgs
 )
 
 # Install Cpp executables
