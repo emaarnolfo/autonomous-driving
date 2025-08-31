@@ -10,8 +10,6 @@ class WallFollow : public rclcpp::Node {
 public:
     WallFollow() : Node("wall_follow_node")
     {
-        // TODO: create ROS subscribers and publishers
-
         // Lidar scan subscriber
         scan_subscriber_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
             lidarscan_topic, 10, std::bind(&WallFollow::scan_callback, this, std::placeholders::_1));
@@ -39,28 +37,21 @@ private:
     std::string drive_topic = "/drive";
 
 
-    /// TODO: create ROS subscribers and publishers
+    /// ROS subscribers and publishers
     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_subscriber_;
     rclcpp::Publisher<ackermann_msgs::msg::AckermannDriveStamped>::SharedPtr drive_publisher_;
 
+    /*
+    * Función auxiliar simple para devolver la medición de rango correspondiente en un ángulo dado.
+    * Argumentos:
+    *     range_data: arreglo de rangos único del LiDAR
+    *     angle: entre angle_min y angle_max del LiDAR
+    * 
+    * Retorna:
+    *     range: medición de rango en metros en el ángulo dado
+    */
     double get_range(const sensor_msgs::msg::LaserScan::ConstSharedPtr scan_msg, double angle)
     {
-        /*
-        Simple helper to return the corresponding range measurement at a given angle. Make sure you take care of NaNs and infs.
-
-        
-        Args:
-            range_data: single range array from the LiDAR
-            angle: between angle_min and angle_max of the LiDAR
-
-        Returns:
-            range: range measurement in meters at the given angle
-        */
-
-        // TODO: implement
-    
-        // Obtener dos mediciones de distancia con el lidar. 
-        // La primera medicion a los 90 grados y la segunda a los 60 grados
 
         // Angulo en grados a radianes
         double angle_rad = angle * M_PI / 180.0;
@@ -86,19 +77,18 @@ private:
         return range;
     }
 
+    /*
+    Calcula el error con respecto a la pared. Sigue la pared a la izquierda (yendo en sentido antihorario en el circuito de Levine).
+    
+    Argumentos:
+        range_data: arreglo único de rangos del LiDAR
+        dist: distancia deseada a la pared
+
+    Retorna:
+        error: error calculado
+    */
     double get_error(const sensor_msgs::msg::LaserScan::ConstSharedPtr scan_msg, double dist_deseada)
     {
-        /*
-        Calculates the error to the wall. Follow the wall to the left (going counter clockwise in the Levine loop). You potentially will need to use get_range()
-
-        Args:
-            range_data: single range array from the LiDAR
-            dist: desired distance to the wall
-
-        Returns:
-            error: calculated error
-        */
-
         double dist_a = get_range(scan_msg, 60.0);
         double dist_b = get_range(scan_msg, 90.0);
         double theta_rad = 30 * M_PI / 180.0;
@@ -112,6 +102,13 @@ private:
         return dist_error;
     }
 
+
+    /**
+     * Función para controlar el vehículo utilizando un controlador PID.
+     * Esta función calcula el valor de control basado en el error actual, el error previo
+     * y los parámetros del controlador PID (kp, kd, ki). Luego publica un mensaje de
+     * AckermannDriveStamped con el ángulo de dirección y la velocidad calculados.
+     */
     void pid_control(double error, double velocity)
     {
         auto drive_msg = ackermann_msgs::msg::AckermannDriveStamped();
@@ -123,31 +120,29 @@ private:
         drive_msg.drive.steering_angle = angle;
         drive_msg.drive.speed = velocity;
 
-        // Publish the drive message
+        // Publicar el mensaje de conducción
         drive_publisher_->publish(drive_msg);
 
-        // imprimir calculo de pid para debug
+        // Imprimir calculo de pid para debug
         RCLCPP_INFO(this->get_logger(), "PID: %f", pid);
 
         // Guardar el error para la siguiente iteracion
         prev_error = error;
     }
 
+    /**
+     * Función de callback para los mensajes del escáner LIDAR.
+     * Esta función procesa los datos entrantes del LIDAR para calcular el error
+     * con respecto a la distancia deseada de la pared y luego utiliza un controlador PID
+     * para determinar el ángulo de dirección y la velocidad apropiados para el vehículo.
+     */
     void scan_callback(const sensor_msgs::msg::LaserScan::ConstSharedPtr scan_msg) 
     {
-        /*
-        Callback function for LaserScan messages. Calculate the error and publish the drive message in this function.
-
-        Args:
-            msg: Incoming LaserScan message
-
-        Returns:
-            None
-        */
-        double error = get_error(scan_msg, dist_deseada); // TODO: replace with error calculated by get_error()
+        // Calcular el error
+        double error = get_error(scan_msg, dist_deseada);
         double velocity = 1.50; // TODO: calculate desired car velocity based on error
         
-        // TODO: actuate the car with PID
+        // Conducir el coche con PID
         pid_control(error, velocity);
     }
 
